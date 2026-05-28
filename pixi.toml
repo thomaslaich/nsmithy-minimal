@@ -9,3 +9,5 @@ version = "0.1.0"
 
 [dependencies]
 python = ">=3.14.5,<3.15"
+dotnet = ">=10.0.100,<11"
+just = ">=1.51.0,<2"
