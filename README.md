@@ -22,21 +22,25 @@ pixi shell
 
 ## Running
 
-Start the server:
+[just](https://github.com/casey/just) is available in the pixi shell:
+
+```sh
+just server   # start the server
+just client   # run the client against http://localhost:5000
+```
+
+Or directly with the .NET CLI:
 
 ```sh
 dotnet run --project Weather.Server
-```
-
-In a second terminal, run the client:
-
-```sh
 dotnet run --project Weather.Client
 ```
 
 The client connects to `http://localhost:5000` by default. Pass a different URL as the first argument if needed:
 
 ```sh
+just client http://localhost:8080
+# or
 dotnet run --project Weather.Client -- http://localhost:8080
 ```
 
