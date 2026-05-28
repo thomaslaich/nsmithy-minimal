@@ -15,5 +15,4 @@
     <PackageReference Include="NSmithy.Protocols.RestJson" />
     <ProjectReference Include="../Weather.Contracts/Weather.Contracts.csproj" />
   </ItemGroup>
-
 </Project>

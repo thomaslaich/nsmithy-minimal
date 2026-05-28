@@ -15,5 +15,4 @@
     <PackageReference Include="NSmithy.Server.AspNetCore.Docs" />
     <ProjectReference Include="../Weather.Contracts/Weather.Contracts.csproj" />
   </ItemGroup>
-
 </Project>
