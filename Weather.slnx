@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Weather.Client/Weather.Client.csproj" />
   <Project Path="Weather.Contracts/Weather.Contracts.csproj" />
   <Project Path="Weather.Server/Weather.Server.csproj" />
 </Solution>
