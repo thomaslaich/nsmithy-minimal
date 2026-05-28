@@ -42,5 +42,5 @@ dotnet run --project Weather.Client -- http://localhost:8080
 
 Once the server is running, the following endpoints are also available:
 
-- **OpenAPI spec** — `http://localhost:5000/openapi`
-- **Interactive docs** — `http://localhost:5000/docs`
+- **Scalar API explorer** — `http://localhost:5000/openapi`
+- **Smithy docs** — `http://localhost:5000/docs`
