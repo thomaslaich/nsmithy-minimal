@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Thomas Laich <thomaslaich@gmail.com>"]
+channels = ["conda-forge"]
+name = "nsmithy-minimal"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.14.5,<3.15"
