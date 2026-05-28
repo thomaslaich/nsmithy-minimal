@@ -10,6 +10,16 @@ The service is the Weather example from the [Smithy quickstart](https://smithy.i
 - **Weather.Server** — ASP.NET Core server with a hardcoded in-memory implementation.
 - **Weather.Client** — Console app that exercises the API end-to-end.
 
+## Prerequisites
+
+Requires the [.NET SDK](https://dotnet.microsoft.com/download) (10.0+) and Python (for Smithy's build tooling).
+
+Alternatively, use [pixi](https://pixi.sh) to drop into a dev shell that provides both:
+
+```sh
+pixi shell
+```
+
 ## Running
 
 Start the server:
@@ -29,3 +39,8 @@ The client connects to `http://localhost:5000` by default. Pass a different URL 
 ```sh
 dotnet run --project Weather.Client -- http://localhost:8080
 ```
+
+Once the server is running, the following endpoints are also available:
+
+- **OpenAPI spec** — `http://localhost:5000/openapi.json`
+- **Interactive docs** — `http://localhost:5000/docs`
