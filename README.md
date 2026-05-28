@@ -12,7 +12,7 @@ The service is the Weather example from the [Smithy quickstart](https://smithy.i
 
 ## Prerequisites
 
-Requires the [.NET SDK](https://dotnet.microsoft.com/download) (10.0+) and Python (for Smithy's build tooling).
+Requires the [.NET SDK](https://dotnet.microsoft.com/download) (10.0+) and Python (for Smithy doc generation).
 
 Alternatively, use [pixi](https://pixi.sh) to drop into a dev shell that provides both:
 
@@ -42,5 +42,5 @@ dotnet run --project Weather.Client -- http://localhost:8080
 
 Once the server is running, the following endpoints are also available:
 
-- **OpenAPI spec** — `http://localhost:5000/openapi.json`
+- **OpenAPI spec** — `http://localhost:5000/openapi`
 - **Interactive docs** — `http://localhost:5000/docs`
