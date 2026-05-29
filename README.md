@@ -1,6 +1,6 @@
 # NSmithy Minimal Example
 
-A minimal example of [NSmithy](https://github.com/thomaslaich/nsmithy) — a C# implementation of the [Smithy](https://smithy.io) IDL.
+A minimal example of [NSmithy](https://github.com/thomaslaich/smithy-dotnet) — a C# implementation of the [Smithy](https://smithy.io) IDL.
 
 The service is the Weather example from the [Smithy quickstart](https://smithy.io/2.0/quickstart.html): a REST API that exposes city resources with paginated listing and per-city weather forecasts.
 
