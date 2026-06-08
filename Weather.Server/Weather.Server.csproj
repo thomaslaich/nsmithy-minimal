@@ -7,10 +7,10 @@
     <SmithyGeneratedNamespaces>example.weather</SmithyGeneratedNamespaces>
     <SmithyGenerateDocs>true</SmithyGenerateDocs>
     <SmithyOpenApiProtocol>aws.protocols#restJson1</SmithyOpenApiProtocol>
+    <SmithyGenerateClient>false</SmithyGenerateClient>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NSmithy.Server" />
     <PackageReference Include="NSmithy.Server.AspNetCore" />
     <PackageReference Include="NSmithy.Server.AspNetCore.Docs" />
     <ProjectReference Include="../Weather.Contracts/Weather.Contracts.csproj" />
