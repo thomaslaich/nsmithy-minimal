@@ -4,11 +4,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageVersion Include="NSmithy.MSBuild" Version="0.1.0" />
-    <PackageVersion Include="NSmithy.Client" Version="0.1.0" />
-    <PackageVersion Include="NSmithy.Codecs.Json" Version="0.1.0" />
-    <PackageVersion Include="NSmithy.Protocols.RestJson" Version="0.1.0" />
-    <PackageVersion Include="NSmithy.Server.AspNetCore" Version="0.1.0" />
-    <PackageVersion Include="NSmithy.Server.AspNetCore.Docs" Version="0.1.0" />
+    <PackageVersion Include="NSmithy.MSBuild" Version="0.3.0" />
+    <PackageVersion Include="NSmithy.Client" Version="0.3.0" />
+    <PackageVersion Include="NSmithy.Codecs.Json" Version="0.3.0" />
+    <PackageVersion Include="NSmithy.Protocols.RestJson" Version="0.3.0" />
+    <PackageVersion Include="NSmithy.Server.AspNetCore" Version="0.3.0" />
+    <PackageVersion Include="NSmithy.Server.AspNetCore.Docs" Version="0.3.0" />
   </ItemGroup>
 </Project>
