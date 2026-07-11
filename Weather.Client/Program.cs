@@ -1,9 +1,12 @@
 using Example.Weather;
 using NSmithy.Client;
 
-var endpoint = args.Length > 0 ? args[0] : "http://localhost:5000";
+var debug = args.Contains("--debug");
+var endpoint = args.FirstOrDefault(a => !a.StartsWith("--")) ?? "http://localhost:5000";
 
-var client = new WeatherClient(new Uri(endpoint));
+var client = debug
+    ? new WeatherClient(new Uri(endpoint), new() { Interceptors = { new DebugInterceptor() } })
+    : new WeatherClient(new Uri(endpoint));
 
 var time = await client.GetCurrentTimeAsync(new GetCurrentTimeInput());
 Console.WriteLine($"Current time: {time.Time:u}");
