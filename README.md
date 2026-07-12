@@ -37,12 +37,18 @@ dotnet run --project Weather.Server
 dotnet run --project Weather.Client
 ```
 
-The client connects to `http://localhost:5000` by default. Pass a different URL as the first argument if needed:
+The client connects to `http://localhost:5000` by default. Pass a different URL as an argument if needed:
 
 ```sh
 just client http://localhost:8080
 # or
 dotnet run --project Weather.Client -- http://localhost:8080
+```
+
+Pass `--debug` to log requests, responses, and wire bytes (this is what `just client-debug` does):
+
+```sh
+dotnet run --project Weather.Client -- --debug
 ```
 
 Once the server is running, the following endpoints are also available:
