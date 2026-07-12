@@ -13,18 +13,13 @@ Console.WriteLine($"Current time: {time.Time:u}");
 
 // Paginate through all cities, 3 per page
 Console.WriteLine("All cities (paginated, page size 3):");
-string? nextToken = null;
 var page = 1;
-do
+await foreach (var result in client.ListCitiesPagesAsync(new ListCitiesInput(PageSize: 3)))
 {
-    var result = await client.ListCitiesAsync(
-        new ListCitiesInput(NextToken: nextToken, PageSize: 3)
-    );
     Console.WriteLine($"  Page {page++}:");
     foreach (var city in result.Items.Values)
         Console.WriteLine($"    {city.CityId}: {city.Name}");
-    nextToken = result.NextToken;
-} while (nextToken is not null);
+}
 
 var seattle = await client.GetCityAsync(new GetCityInput("SEA"));
 Console.WriteLine($"Seattle: ({seattle.Coordinates.Latitude}, {seattle.Coordinates.Longitude})");

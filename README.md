@@ -25,8 +25,9 @@ pixi shell
 [just](https://github.com/casey/just) is available in the pixi shell:
 
 ```sh
-just server   # start the server
-just client   # run the client against http://localhost:5000
+just server         # start the server
+just client         # run the client against http://localhost:5000
+just client-debug   # same, with wire-level request/response logging
 ```
 
 Or directly with the .NET CLI:
