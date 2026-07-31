@@ -10,5 +10,5 @@ builder.Services.AddSingleton<IGetForecastHandler, GetForecastHandler>();
 var app = builder.Build();
 app.MapSmithyOpenApi();
 app.MapSmithyDocs();
-app.MapWeatherServiceHttp();
+app.MapWeatherServiceRestJson1();
 app.Run();
