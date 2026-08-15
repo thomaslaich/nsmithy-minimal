@@ -51,6 +51,66 @@ Pass `--debug` to log requests, responses, and wire bytes (this is what `just cl
 dotnet run --project Weather.Client -- --debug
 ```
 
+## Rejecting a bad request
+
+The server enforces the model at the boundary, so a request that violates it is answered with a structured 4xx rather than reaching the handler. Nothing in the handlers implements these checks — they are generated from the model.
+
+`CityId` is declared `@pattern("^[A-Za-z0-9 ]+$")`, so a city ID carrying a character the pattern excludes is rejected with `ValidationException`, which names the member and the constraint it failed:
+
+```sh
+curl -i 'http://localhost:5000/cities/SEA%21'   # "SEA!"
+```
+
+```
+HTTP/1.1 400 Bad Request
+X-Amzn-Errortype: ValidationException
+
+{"message":"1 validation error detected. Value at '/cityId' failed to satisfy
+constraint: Member must satisfy regular expression pattern: ^[A-Za-z0-9 ]+$",
+"fieldList":[{"path":"/cityId","message":"..."}]}
+```
+
+Input that cannot become modeled input at all fails earlier, during deserialization, and comes back as `SerializationException` — here `pageSize` is modeled as `Integer`:
+
+```sh
+curl -i 'http://localhost:5000/cities?pageSize=abc'
+```
+
+```
+HTTP/1.1 400 Bad Request
+X-Amzn-Errortype: SerializationException
+
+{"message":"Value 'abc' is not a valid integer."}
+```
+
+An `Accept` header that excludes the response's media type is answered with 406:
+
+```sh
+curl -i -H 'Accept: application/xml' http://localhost:5000/cities/SEA
+```
+
+```
+HTTP/1.1 406 Not Acceptable
+X-Amzn-Errortype: NotAcceptableException
+
+{"message":"Response is 'application/json', which Accept 'application/xml' excludes."}
+```
+
+A request that satisfies the model but names something absent still reaches the handler and returns the error the operation models — a space is inside `CityId`'s pattern, so this is a `NoSuchResource`, not a validation failure:
+
+```sh
+curl -i 'http://localhost:5000/cities/%20'
+```
+
+```
+HTTP/1.1 400 Bad Request
+X-Amzn-Errortype: NoSuchResource
+
+{"resourceType":"City"}
+```
+
+The client exercises both of these — a modeled `NoSuchResource` and an implicit `ValidationException` — as typed exceptions rather than bare status codes.
+
 Once the server is running, the following endpoints are also available:
 
 - **Scalar API explorer** — `http://localhost:5000/openapi`
