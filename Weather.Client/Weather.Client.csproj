@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <PackageReference Include="NSmithy.Client" />
-    <PackageReference Include="NSmithy.Codecs.Json" />
     <PackageReference Include="NSmithy.Protocols.RestJson" />
     <ProjectReference Include="../Weather.Contracts/Weather.Contracts.csproj" />
   </ItemGroup>
