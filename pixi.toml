@@ -2,13 +2,13 @@
 authors = ["Thomas Laich <thomaslaich@gmail.com>"]
 channels = ["conda-forge"]
 name = "nsmithy-minimal"
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64", "linux-aarch64", "osx-64", "win-64"]
 version = "0.1.0"
 
 [tasks]
 
 [dependencies]
-python = ">=3.14.5,<3.15"
-# dotnet = ">=10.0.100,<11"
-just = ">=1.51.0,<2"
-smithy = ">=1.73.0,<2"
+python = ">=3.15.0,<3.16"
+dotnet = ">=10.0.401,<11"
+just = ">=1.58.0,<2"
+smithy = ">=1.74.0,<2"
