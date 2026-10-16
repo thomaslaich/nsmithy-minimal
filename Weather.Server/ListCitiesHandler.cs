@@ -21,9 +21,7 @@ internal sealed class ListCitiesHandler : IListCitiesHandler
 
         return Task.FromResult(
             new ListCitiesOutput(
-                Items: new CitySummaries(
-                    page.Select(c => new CitySummary(c.CityId, c.Name)).ToList()
-                ),
+                Items: page.Select(c => new CitySummary(c.CityId, c.Name)).ToList(),
                 NextToken: nextToken
             )
         );
