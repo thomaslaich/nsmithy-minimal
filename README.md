@@ -12,7 +12,7 @@ The service is the Weather example from the [Smithy quickstart](https://smithy.i
 
 ## Prerequisites
 
-Requires the [.NET SDK](https://dotnet.microsoft.com/download) (10.0+), the [Smithy CLI](https://smithy.io/2.0/guides/smithy-cli/cli_installation.html) (1.73.0+, on `PATH`) for code generation, and Python (for Smithy doc generation).
+Requires the [.NET SDK](https://dotnet.microsoft.com/download) (10.0+), the [Smithy CLI](https://smithy.io/2.0/guides/smithy-cli/cli_installation.html) (1.74.1+, on `PATH`) for code generation, and Python (for Smithy doc generation).
 
 Alternatively, use [pixi](https://pixi.sh) to drop into a dev shell that provides all three (on macOS, Linux and Windows):
 
@@ -24,7 +24,7 @@ If you'd rather not install the Smithy CLI, reference the [`NSmithy.SmithyCli`](
 
 ```xml
 <ItemGroup>
-  <GlobalPackageReference Include="NSmithy.SmithyCli" Version="1.73.0" />
+  <GlobalPackageReference Include="NSmithy.SmithyCli" Version="1.74.1" />
 </ItemGroup>
 ```
 
