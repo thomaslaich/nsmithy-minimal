@@ -9,7 +9,7 @@ var client = debug
     ? new WeatherClient(new Uri(endpoint), new() { Interceptors = { new DebugInterceptor() } })
     : new WeatherClient(new Uri(endpoint));
 
-var time = await client.GetCurrentTimeAsync(new GetCurrentTimeInput());
+var time = await client.GetCurrentTimeAsync();
 Console.WriteLine($"Current time: {time.Time:u}");
 
 // Paginate through all cities, 3 per page
