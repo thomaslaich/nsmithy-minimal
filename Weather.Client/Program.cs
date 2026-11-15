@@ -39,10 +39,10 @@ catch (NoSuchResource error)
     Console.WriteLine($"No such {error.ResourceType}: Atlantis");
 }
 
-// CityId is @pattern("^[A-Za-z0-9 ]+$"), and constraints are enforced by the server — the client
-// sends what it is handed. The rejection comes back as smithy.framework#ValidationException, an
-// implicit modeled error on every operation, so it deserializes into a typed exception naming the
-// member and the constraint it failed rather than a bare 400.
+// CityId is @pattern("^[A-Za-z0-9 ]+$"), and constraints are enforced by the server: the client
+// sends what it is handed. The rejection comes back as smithy.framework#ValidationException, which
+// the model declares on GetCity, so it deserializes into a typed exception naming the member and
+// the constraint it failed rather than a bare 400.
 try
 {
     await client.GetCityAsync(new GetCityInput("SEA!"));
